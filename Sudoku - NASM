@@ -1,0 +1,86 @@
+; Universidad del Valle de Guatemala			Organización de Computadoras y Assembler
+; Gustavo Cruz # 22779							Edwin #
+; Descripción: Sudoku NASM
+; Consultado en: 
+; 1. https://www.youtube.com/watch?v=0_CW2-RMw0w
+; 2. https://www.tutorialspoint.com/assembly_programming/index.htm
+
+
+section .data									;sección de variables
+	msgBienvenida			db "Bienvenido a SUDOKU-NASM", 10
+	msg_LenBienven			equ $ - msgBienvenida
+	msgIns					db "Instrucción: ", 10
+	msg_LenIns				equ $ - msgIns
+	msgDif					db "Elija el nivel de dificultad, de 1 a 3 siendo 3 el más difícil", 10
+	msg_LenDif				equ $ - msgDif
+	msgRow					db "A	", "B	", "C	", "D	", "E	", "F	", "G	", "H	", "I	"
+	msg_LenRow				equ $ - msgRow
+	msgCol					db "1 |", "2 |", "3 |", "4 |", "5 |", "6 |", "7 |", "8 |", "9 |"
+	msg_LenCol				equ $ - msgCol
+	sudoku					db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0,
+							db 0,0,0,0,0,0,0,0,0 
+	sudoku_size				equ 91
+
+section .bss									;sección de variables no inicializadas
+	input resb 2
+
+section .text
+	global _start
+	
+_start: 
+	
+	;Imprime Bienvenida
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, msgBienvenida
+	mov edx, msg_LenBienven
+	
+	;Llamada al kernel
+	int 0x80
+	
+	;Imprime Instrucción
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, msgIns
+	mov edx, msg_LenIns
+	
+	;Llamada al kernel
+	int 0x80
+	
+	;Agregar las instruciones para jugar sudoku y no morir en el intento
+	
+	;Preguntar por la dificultad
+	mov eax, 4 
+	mov ebx, 1
+	mov ecx, msgDif
+	mov edx, msg_LenDif
+	
+	;Llamada al kernel
+	int 0x80
+	
+	mov eax, 3
+	mov edx, 0
+	mov ecx, input
+	mov edx, 2
+	
+	;Llamada al kernel
+	int 0x80
+	
+	cmp dif, 3
+	je sud
+	
+sud:
+	
+	
+
+	;Finalizar ejecución
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
