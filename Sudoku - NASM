@@ -76,4 +76,11 @@ _start:
 	cmp dif, 3
 	je sud
 	
+sud:
+	
+	
 
+	;Finalizar ejecución
+	mov eax, 1
+	xor ebx, ebx
+	int 0x80
