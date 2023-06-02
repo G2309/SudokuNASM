@@ -1,5 +1,5 @@
 ; Universidad del Valle de Guatemala			Organización de Computadoras y Assembler
-; Gustavo Cruz # 22779							Edwin #
+; Gustavo Cruz # 22779							Edwin # 22809
 ; Descripción: Sudoku NASM
 ; Consultado en: 
 ; 1. https://www.youtube.com/watch?v=0_CW2-RMw0w
@@ -7,7 +7,7 @@
 
 
 section .data									;sección de variables
-	msgBienvenida			db "Bienvenido a SUDOKU-NASM", 10
+	msgBienvenida			db "", 10
 	msg_LenBienven			equ $ - msgBienvenida
 	msgIns					db "Instrucción: ", 10
 	msg_LenIns				equ $ - msgIns
