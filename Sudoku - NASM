@@ -7,7 +7,7 @@
 
 
 section .data									;sección de variables
-	msgBienvenida			db "", 10
+	msgBienvenida			db "Bienvenido a SUDOKU-NASM", 10
 	msg_LenBienven			equ $ - msgBienvenida
 	msgIns					db "Instrucción: ", 10
 	msg_LenIns				equ $ - msgIns
