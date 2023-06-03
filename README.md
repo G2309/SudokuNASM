@@ -6,6 +6,9 @@ Sudoku utilizando NASM
 2. Utilice el compilador online sugerido, tutorialspoint, pues este hace uso de bash, terminal utilizada mientras se realizaba el código.
 3. Reemplace el código existente y ejecute.
 
+# video de funcionamiento
+
+https://youtu.be/0utGXK12aDg
 
 # Diagrama  de flujo
 
