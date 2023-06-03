@@ -296,9 +296,6 @@ ez:
 	mov edx, msg_LenRow
 	int 0x80
 	
-	mov [sudoku3_r1+5], 10 
-	
-	
 	mov eax, 4
 	mov ebx, 1
 	mov ecx, sudoku3_r1
